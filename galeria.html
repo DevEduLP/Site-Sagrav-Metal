@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sagrav - Galeria</title>
+    <link rel="stylesheet" href="stylegaleria.css">
+    <link href="https://fonts.cdnfonts.com/css/hemi-head" rel="stylesheet">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <header class="styled-header">
+        <div class="logo">
+            <img src="images/sagrav_logo-removebg-preview.png" alt="Logo da Banda">
+        </div>
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav class="main-nav" id="mainNav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="discografia.html">Discografia</a></li>
+                <li><a href="galeria.html">Galeria</a></li>
+                <li><a href="integrantes.html">Integrantes</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="galeria">
+            <h1>Galeria</h1>
+            <div class="foto-grid">
+                <!-- Repita esse bloco para cada foto -->
+                <div class="foto-item"><img src="images/banda circulo.jpg" alt="Foto da Banda"></div>
+                <div class="foto-item"><img src="images/foto banda atual.jpg" alt="Foto da banda"></div>
+                <div class="foto-item"><img src="images/SAGRAV - FOTO BANDA-4.jpg" alt="Show da banda"></div>
+                <div class="foto-item"><img src="images/SAGRAV - FOTO BANDA-5.jpg" alt="Show da banda"></div>
+                <div class="foto-item"><img src="images/SAGRAV - FOTO SHOW CEU-06.jpg" alt="Show da banda"></div>
+                <div class="foto-item"><img src="images/Barbeiro.ftr-Creepy show2024-95.jpg" alt="Show da banda"></div>
+                <div class="foto-item"><img src="images/Barbeiro.ftr-Creepy show2024-86.jpg" alt="Show da banda"></div>
+                <div class="foto-item"><img src="images/Barbeiro.ftr-Creepy show2024-94.jpg" alt="Show da banda"></div>
+                <div class="foto-item"><img src="images/Barbeiro.ftr-Creepy show2024-87.jpg" alt="Show da banda"></div>
+                <div class="foto-item"><img src="images/Barbeiro.ftr-Creepy show2024-88.jpg" alt="Show da banda"></div>
+                <div class="foto-item"><img src="images/Barbeiro.ftr-Creepy show2024-143.jpg" alt="Show da banda"></div>
+                <div class="foto-item"><img src="images/prota (1).jpg" alt="Show da banda"></div>
+                <div class="foto-item"><img src="images/secao.jpg" alt="Show da banda"></div>
+                <div class="foto-item"><img src="images/corvo (2).jpg" alt="Show da banda"></div>
+                <div class="foto-item"><img src="images/corvo (2).jpg" alt="Show da banda"></div>
+                <div class="foto-item"><img src="images/dudu (2).jpg" alt="Show da banda"></div>
+                <div class="foto-item"><img src="images/corvo (4).jpg" alt="Show da banda"></div>
+                <div class="foto-item"><img src="images/prota (2).jpg" alt="Show da banda"></div>
+                <div class="foto-item"><img src="images/dudu (1).jpg" alt="Show da banda"></div>
+                <div class="foto-item"><img src="images/secao1.jpg" alt="Show da banda"></div>
+                <div class="foto-item"><img src="images/corvo (3).jpg" alt="Show da banda"></div>
+                <div class="foto-item"><img src="images/corvo (1).jpg" alt="Show da banda"></div>
+            </div>
+        </section>
+
+        <!-- Lightbox Modal para Galeria -->
+        <div id="lightbox" class="lightbox">
+            <span class="lightbox-close" id="lightboxClose">&times;</span>
+            <img class="lightbox-img" id="lightboxImg" src="" alt="">
+            <div class="lightbox-controls">
+                <button id="lightboxPrev"><i class="bx bx-chevron-left"></i></button>
+                <button id="lightboxZoom"><i class="bx bx-zoom-in"></i></button>
+                <button id="lightboxNext"><i class="bx bx-chevron-right"></i></button>
+            </div>
+        </div>
+
+
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-social">
+                <a href="https://www.instagram.com/sagravmetal/" target="_blank"><i class="bx bxl-instagram"></i></a>
+                <a href="https://www.facebook.com/SagravMetal" target="_blank"><i class="bx bxl-facebook"></i></a>
+                <a href="https://open.spotify.com/intl-pt/artist/6wdNFqdtfpy0UfYSQZna11" target="_blank"><i
+                        class="bx bxl-spotify"></i></a>
+                <a href="https://www.youtube.com/@sagrav6912" target="_blank"><i class="bx bxl-youtube"></i></a>
+            </div>
+            <img src="images/sagrav_logo-removebg-preview.png" alt="Mini Logo" class="footer-logo">
+            <div>
+                <p>&copy; Sagrav - 2025. Website Designed by <a href="mailto:edulpbs@gmail.com">Dudu Livi</a></p>
+            </div>
+            <div class="footer-links">
+                <a href="index.html">Home</a> |
+                <a href="discografia.html">Discografia</a> |
+                <a href="galeria.html">Galeria</a> |
+                <a href="loja.html">Loja</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // MENU HAMBURGUER
+        document.addEventListener("DOMContentLoaded", function () {
+            const hamburger = document.getElementById("hamburger");
+            const nav = document.getElementById("mainNav");
+            hamburger.addEventListener("click", () => {
+                nav.classList.toggle("show");
+                hamburger.classList.toggle("active");
+            });
+        });
+
+
+        const images = Array.from(document.querySelectorAll('.foto-item img'));
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightboxImg');
+        const lightboxClose = document.getElementById('lightboxClose');
+        const lightboxPrev = document.getElementById('lightboxPrev');
+        const lightboxNext = document.getElementById('lightboxNext');
+        const lightboxZoom = document.getElementById('lightboxZoom');
+        let currentIndex = 0;
+        let isZoomed = false;
+
+        // Abrir Lightbox
+        images.forEach((img, i) => {
+            img.addEventListener('click', () => {
+                currentIndex = i;
+                showLightbox();
+            });
+        });
+        function showLightbox() {
+            lightbox.classList.add('open');
+            isZoomed = false;
+            updateLightboxImg();
+        }
+        function updateLightboxImg() {
+            lightboxImg.src = images[currentIndex].src;
+            lightboxImg.alt = images[currentIndex].alt || '';
+            lightboxImg.classList.toggle('lightbox-zoomed', isZoomed);
+        }
+        function closeLightbox() {
+            lightbox.classList.remove('open');
+            setTimeout(() => { lightboxImg.src = ''; }, 180);
+        }
+        // Navegar
+        lightboxPrev.onclick = () => {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            isZoomed = false;
+            updateLightboxImg();
+        };
+        lightboxNext.onclick = () => {
+            currentIndex = (currentIndex + 1) % images.length;
+            isZoomed = false;
+            updateLightboxImg();
+        };
+        // Zoom
+        lightboxZoom.onclick = () => {
+            isZoomed = !isZoomed;
+            updateLightboxImg();
+            // Altera ícone zoom-in/zoom-out
+            lightboxZoom.innerHTML = isZoomed ?
+                '<i class="bx bx-zoom-out"></i>' :
+                '<i class="bx bx-zoom-in"></i>';
+        };
+        // Fechar
+        lightboxClose.onclick = closeLightbox;
+        lightbox.onclick = e => {
+            if (e.target === lightbox) closeLightbox();
+        };
+        // Teclas: Esc fecha, <- -> navega, Z dá zoom
+        document.addEventListener('keydown', function (e) {
+            if (!lightbox.classList.contains('open')) return;
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowLeft') lightboxPrev.onclick();
+            if (e.key === 'ArrowRight') lightboxNext.onclick();
+            if (e.key.toLowerCase() === 'z') lightboxZoom.onclick();
+        });
+
+
+    </script>
+</body>
+
+</html>

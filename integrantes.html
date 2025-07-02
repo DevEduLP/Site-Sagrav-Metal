@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Integrantes - Sagrav Metal</title>
+    <link rel="stylesheet" href="styleintegrantes.css">
+    <link href="https://fonts.cdnfonts.com/css/hemi-head" rel="stylesheet">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header class="styled-header">
+        <div class="logo" id="logo">
+            <a href="index.html"><img src="images/sagrav_logo-removebg-preview.png" alt="Sagrav Logo"></a>
+        </div>
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav class="main-nav" id="mainNav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="discografia.html">Discografia</a></li>
+                <li><a href="galeria.html">Galeria</a></li>
+                <li><a href="integrantes.html" class="active">Integrantes</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- INTEGRANTES -->
+    <section id="integrantes" data-aos="fade-up">
+        <h1>Integrantes</h1>
+        <div class="integrantes-container">
+            <img src="./images/banda circulo.jpg" alt="Sagrav - Integrantes" class="integrantes-foto"
+                id="integrantesFoto">
+            <div class="integrantes-legenda">
+                <p>
+                    <strong>Luciano Bravo 'Secão'</strong> – Vocals<br>
+                    <strong>Eduardo Livi 'Dudu Livi'</strong> – Guitars<br>
+                    <strong>Protásio Vargas 'Prota'</strong> – Bass<br>
+                    <strong>Roberto Rodrigues 'Corvo'</strong> – Drums
+                </p>
+            </div>
+        </div>
+        <!-- Lightbox para a foto dos integrantes -->
+        <div id="lightboxIntegrantes" class="lightbox-integrantes">
+            <span class="lightbox-close" id="closeLightbox">&times;</span>
+            <img class="lightbox-img" id="lightboxImg" src="./images/banda circulo.jpg" alt="Sagrav - Integrantes">
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <img src="images/sagrav_logo-removebg-preview.png" alt="Mini Logo" class="footer-logo">
+            <div>
+                <p>&copy; Sagrav - 2025. Website Designed by <a href="https://devedulp.github.io/siteportfolio123/">Dudu
+                        Livi</a></p>
+            </div>
+            <div class="footer-links">
+                <a href="index.html">Home</a> |
+                <a href="discografia.html">Discografia</a> |
+                <a href="galeria.html">Galeria</a> |
+                <a href="integrantes.html">Integrantes</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const hamburger = document.getElementById("hamburger");
+            const nav = document.getElementById("mainNav");
+            hamburger.addEventListener("click", () => {
+                nav.classList.toggle("show");
+                hamburger.classList.toggle("active");
+            });
+        });
+        AOS.init();
+
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const foto = document.getElementById('integrantesFoto');
+            const lightbox = document.getElementById('lightboxIntegrantes');
+            const close = document.getElementById('closeLightbox');
+
+            foto.addEventListener('click', () => {
+                lightbox.classList.add('open');
+                document.body.style.overflow = 'hidden'; // trava scroll
+            });
+            close.addEventListener('click', () => {
+                lightbox.classList.remove('open');
+                document.body.style.overflow = '';
+            });
+            // Fecha lightbox clicando fora da imagem
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox) {
+                    lightbox.classList.remove('open');
+                    document.body.style.overflow = '';
+                }
+            });
+        });
+
+
+    </script>
+</body>
+
+</html>
